@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Enhanced Indoor Localization System | Aung Min Khant</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- ================= NAVIGATION ================= -->
+
+    <nav>
+
+        <div class="logo">
+            AMK
+        </div>
+
+        <ul>
+
+            <li><a href="../index.html">Home</a></li>
+
+            <li><a href="../index.html#projects">Projects</a></li>
+
+        </ul>
+
+    </nav>
+
+
+
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <div class="hero-left">
+
+            <p class="intro">
+
+                PROJECT CASE STUDY
+
+            </p>
+
+            <h1>
+
+                AI Enhanced Indoor Localization System
+
+            </h1>
+
+            <h2>
+
+                Unprocessed RSSI Samples, Heading Data, Predefined Path Constraints, Path-Aware Fusion Model
+
+            </h2>
+
+
+
+            <p class="description">
+
+                An AI-enhanced indoor localization system that improves
+                positioning accuracy in GPS-denied environments by
+                combining wireless RSSI measurements, digital compass
+                information and spatial path constraints through an
+                intelligent Path-Aware Fusion Model.
+
+            </p>
+
+    </section>
+
+
+
+
+
+    <!-- ================= INTRODUCTION ================= -->
+
+    <section class="about">
+
+        <div class="section-title">
+
+            <p>
+
+                INTRODUCTION
+
+            </p>
+
+            <h2>
+
+                Project Overview
+
+            </h2>
+
+        </div>
+
+        <div class="about-container">
+
+            <div class="about-text">
+
+                <p>
+
+                    This research presents an AI-enhanced, multi-modal sensor fusion framework to improve indoor
+                    localization accuracy in GPS-denied, high-interference environments. To overcome low-power wireless
+                    telemetry limitations, the system progressively integrates heterogeneous data sources across three
+                    levels. It starts with Unprocessed RSSI Signal Samples affected by multipath interference,
+                    incorporates heading data from a digital compass using deep sequence modeling, and applies
+                    predefined path constraints through a Path-Aware Fusion Model (PAFM). Ultimately, this AI-assisted
+                    matchmaking process successfully mitigates signal anomalies, delivering a highly stable and accurate
+                    positioning output.
+
+                </p>
+
+                <div class="media-wrapper media-half">
+
+                    <figure>
+
+                        <img src="../images/AI Enhanced Indoor Localization/Transmitters Operation.png">
+
+                        <p class="figure-caption">
+                            4 Transmitters operating in the same frequency band at four nodes.
+                        </p>
+
+                    </figure>
+
+                </div>
+
+    </section>
+
+
+
+
+
+    <!-- ================= SECTION 1 ================= -->
+
+    <section class="about">
+
+        <div class="section-title">
+
+
+            <h2>
+
+                Unprocessed RSSI Signal Samples
+
+            </h2>
+
+        </div>
+
+        <div class="about-container">
+
+            <div class="about-text">
+
+                <p>
+
+                    Unprocessed RSSI signal samples consist of per-packet signal power measurements recorded in dBm,
+                    which are inherently unstable and nonlinear due to indoor multipath propagation, non-line-of-sight
+                    conditions, and environmental factors. To characterize these effects, fingerprints were collected
+                    from four transmitters at seven reference points along a predefined trajectory. The system utilizes
+                    a synchronized periodic timing protocol—where transmitters broadcast at fixed intervals of n seconds
+                    and the receiver runs a matching acquisition window—to prevent collisions and ensure consistent
+                    sample density. The resulting raw dataset exhibits high heteroskedasticity and significant spatial
+                    overlap between adjacent nodes, establishing a critical baseline that highlights the spatial
+                    ambiguity of raw measurements.
+
+                </p>
+
+                <div class="media-wrapper media-full">
+
+                    <figure>
+
+                        <img src="../images/AI Enhanced Indoor Localization/Unprocessed RSSI signal samples_Matlab.png">
+
+                        <p class="figure-caption">
+                            Unprocessed RSSI signal samples received by ESP32 + SX1278 LoRa Receiver from 4 SX1278 LoRa
+                            Transmitters.
+                        </p>
+
+                    </figure>
+
+                </div>
+
+    </section>
+
+
+
+
+
+    <!-- ================= SECTION 2 ================= -->
+
+    <section class="about">
+
+        <div class="section-title">
+
+
+
+            <h2>
+
+                Predefined Path Constraints
+
+            </h2>
+
+        </div>
+
+        <div class="about-container">
+
+            <div class="about-text">
+
+                <p>
+
+                    To enable structured data collection, RSSI measurements are acquired along a predefined path
+                    constraints consisting of seven test points arranged in a lowercase *n*-shaped trajectory. This
+                    geometry exposes the Path-Aware Fusion Model to diverse propagation and orthogonal orientation
+                    conditions across longitudinal and transverse segments. Each test point serves as a labeled spatial
+                    checkpoint where multiple unprocessed RSSI signal samples are collected, framing indoor localization
+                    as a test point identification and trajectory reconstruction task. By defining valid connections
+                    between the seven test points, the predefined path constraints allow the Path-Aware Fusion Model to
+                    filter out extreme signal errors that suggest impossible movements off the intended track.
+
+                </p>
+
+                <div class="media-wrapper media-three-quarter">
+
+
+
+                    <figure>
+
+                        <img src="../images/AI Enhanced Indoor Localization/path.png">
+
+                        <p class="figure-caption">
+                            Predefined path constraints based on the distance values between the SX1278 LoRa
+                            Transmitters and 7
+                            nodes.
+                        </p>
+
+                    </figure>
+
+                </div>
+    </section>
+
+
+
+
+
+    <!-- ================= SECTION 3 ================= -->
+
+    <section class="about">
+
+        <div class="section-title">
+
+
+
+            <h2>
+
+                Digital Compass
+
+            </h2>
+
+        </div>
+
+        <div class="about-container">
+
+            <div class="about-text">
+
+                <p>
+
+                    Heading data is collected via a three-axis digital compass and rounded to the nearest cardinal
+                    direction (North, South, East, or West) to match receiver movement to the horizontal and vertical
+                    segments of the n-shaped path. This approach reduces computational overhead by grouping orientation
+                    data into four cardinal directions, allowing the Path-Aware Fusion Model to organize Unprocessed
+                    RSSI Samples into distinct directional categories. Consequently, the system achieves rapid
+                    identification of the receiver location on the rectilinear n-shaped trajectory by correlating the
+                    current heading with the corresponding path segment.
+
+                    This simplification greatly reduces computational
+                    complexity while allowing the Path-Aware Fusion Model
+                    to associate movement direction with individual path
+                    segments. Combining heading information with RSSI
+                    measurements substantially improves localization
+                    consistency.
+
+                </p>
+
+                <div class="media-wrapper media-three-quarter">
+
+
+                    <figure>
+
+                        <img src="../images/AI Enhanced Indoor Localization/1Why Digital Compass is required.png">
+
+                        <p class="figure-caption">
+
+                            The state of the receiver position in the absence of heading data and predefined path
+                            constraints whilst only relying solely on unprocessed RSSI samples.
+                        <p>
+
+                    </figure>
+
+                    <figure>
+
+                        <img src="../images/AI Enhanced Indoor Localization/2Why Digital Compass is required.png">
+
+                        <p class="figure-caption">
+
+                            The state of the receiver position where impossible coordinates can be excluded depends on
+                            the evaluation of heading data, predefined path constraints, and unprocessed RSSI samples.
+
+                        <p>
+
+                    </figure>
+
+                </div>
+
+    </section>
+
+    <!-- ================= SECTION 4 ================= -->
+
+    <section class="about">
+
+        <div class="section-title">
+
+
+            <h2>
+
+                Data Management Framework
+
+            </h2>
+
+        </div>
+
+        <div class="about-container">
+
+            <div class="about-text">
+
+                <p>
+
+                    The research utilizes a structured Data Management Framework where an ESP32 integrated with a LoRa
+                    receiver module captures unprocessed RSSI Signal Samples and digital compass heading data. These raw
+                    inputs are logged into a cloud-based spreadsheet acting as a Centralized Data Repository to maintain
+                    data integrity and handle high-volume signal samples. The logged data is then integrated into a
+                    Google Colab environment for rigorous analysis, facilitating path-aware fusion algorithms that
+                    combine raw signal characteristics with predefined path constraints to reconstruct the indoor
+                    localization trajectory with high precision.
+
+                </p>
+
+                <div class="media-wrapper media-full">
+
+
+                    <figure>
+
+                        <img src="../images/AI Enhanced Indoor Localization/framework.png">
+
+                        <p class="figure-caption">
+                            Unprocessed RSSI samples received by the ESP32 + SX1278 LoRa receiver from 4 distributed
+                            LoRa transmitters.
+                        </p>
+
+                    </figure>
+
+                </div>
+
+    </section>
+
+
+
+
+
+    <!-- ================= SECTION 5 ================= -->
+
+    <section class="about">
+
+        <div class="section-title">
+
+
+
+            <h2>
+
+                Path-Aware Fusion Model
+
+            </h2>
+
+        </div>
+
+        <div class="about-container">
+
+            <div class="about-text">
+
+                <p>
+
+                    Developed in a Google Colab environment, the Path-Aware Fusion Model integrates unprocessed RSSI
+                    samples with digital compass heading data, synchronized via a structured Data Management Framework.
+                    By analyzing trajectory history and transition sequences among transmitters (such as Tx1, Tx2, Tx3
+                    and Tx4), the model resolves spatial ambiguities caused by overlapping signal distributions.
+                    Leveraging real-time heading and predefined path constraints, it filters out physically implausible
+                    signal spikes to continuously estimate the most probable, motion-consistent receiver position.
+
+                </p>
+
+                <div class="media-wrapper media full">
+
+
+                    <figure>
+
+                        <img src="../images/AI Enhanced Indoor Localization/fusion-model.png"
+                            alt="Path-Aware Fusion Model">
+
+                        <p class="figure-caption">
+                            Path-Aware Fusion Model developed with Google Colab for analysis of logged data from excel
+                            files containing heading data and unprocessed RSSI samples, along with visualization.
+                        </p>
+
+                    </figure>
+
+                </div>
+
+    </section>
+
+
+
+
+
+    <!-- ================= PROJECT DEMONSTRATION ================= -->
+
+    <section class="about">
+
+        <div class="section-title">
+
+            <p>
+
+                PROJECT DEMONSTRATION
+
+            </p>
+
+            <h2>
+
+                Localization Experiment
+
+            </h2>
+
+        </div>
+
+        <div class="about-container">
+
+            <div class="about-text">
+
+                <p>
+
+                    The following comprehensive demonstration illustrates the receiver moving seamlessly along the
+                    predefined indoor path while real-time RSSI measurements, heading information, and spatial
+                    constraints are systematically processed by the proposed Path-Aware Fusion Model. Developed and
+                    executed within a Google Colab environment, the experiment validates the ultimate objective of the
+                    system design by successfully achieving accurate indoor localization through the synchronized sensor
+                    fusion of unprocessed RSSI samples, heading data, and predefined path constraints. Ultimately, this
+                    rigorous evaluation demonstrates exactly how the proposed fusion algorithm maintains stable,
+                    motion-consistent tracking and eliminates spatial ambiguity, successfully fulfilling the deployment
+                    plan despite the severe signal fluctuations and multipath interference typically encountered in
+                    complex indoor environments.
+
+                </p>
+
+                <div class="media-wrapper media-half">
+
+                    <video controls autoplay muted loop playsinline preload="auto">
+
+                        <source src="../videos/AI Enhanced Indoor Localization/lora_left_to_right_sim.mp4"
+                            type="video/mp4">
+
+                        Your browser does not support the video tag.
+
+                    </video>
+
+                    <p class="figure-caption">
+                        Visulization of Path-Aware Fusion Model.
+                    </p>
+
+                </div>
+
+    </section>
+
+
+
+
+
+    <!-- ================= RESULTS ================= -->
+
+    <section class="about">
+
+        <div class="section-title">
+
+            <p>
+
+                RESULTS
+
+            </p>
+
+            <h2>
+
+                Research Outcome
+
+            </h2>
+
+        </div>
+
+        <div class="about-container">
+
+            <div class="about-text">
+
+                <p>
+
+                    This section presents a two-phase experimental evaluation designed to demonstrate the effectiveness
+                    of the proposed Path-Aware Fusion Model. The results show that incorporating heading information
+                    alongside predefined path constraints significantly improves localization performance compared to
+                    conventional RSSI-only approaches. Through this multi-stage validation, the Path-Aware Fusion Model
+                    is shown to successfully reduce abnormal position jumps, enhance trajectory continuity, and deliver
+                    highly reliable indoor position estimation under complex signal conditions.
+
+                </p>
+
+                <div class="media-wrapper media-half">
+
+                    <video controls autoplay muted loop playsinline preload="auto">
+
+                        <source src="../videos/AI Enhanced Indoor Localization/result.mp4" type="video/mp4">
+
+                        Your browser does not support the video tag.
+
+                    </video>
+
+                    <p class="figure-caption">
+                        Effectiveness of the path aware fusion model visualized
+                        in two phases.
+                    </p>
+
+                </div>
+
+    </section>
+
+
+
+
+
+    <!-- ================= TECHNOLOGIES ================= -->
+
+    <section class="projects">
+
+        <div class="section-title">
+
+            <p>
+
+                ENGINEERING DETAILS
+
+            </p>
+
+            <h2>
+
+                Technologies Used
+
+            </h2>
+
+        </div>
+
+        <div class="skills-grid">
+
+            <div class="skill-card">
+
+                <h3>
+
+                    Hardware
+
+                </h3>
+
+                <p>
+
+                    ESP32 Development Board<br>
+
+                    SX1278 LoRa Modules<br>
+
+                    HMC5883L Digital Compass
+
+                </p>
+
+            </div>
+
+
+
+
+
+            <div class="skill-card">
+
+                <h3>
+
+                    Software
+
+                </h3>
+
+                <p>
+
+                    Arduino IDE<br>
+
+                    MATLAB<br>
+
+                    Google Colab<br>
+
+                    Python
+
+                </p>
+
+            </div>
+
+
+
+
+
+            <div class="skill-card">
+
+                <h3>
+
+                    Artificial Intelligence
+
+                </h3>
+
+                <p>
+
+                    Sensor Fusion<br>
+
+                    Path-Aware Fusion Model<br>
+
+                    Indoor Localization
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <h2>
+
+                AMK
+
+            </h2>
+
+            <p>
+
+                Aung Min Khant
+
+            </p>
+
+            <small>
+
+                © 2026 Aung Min Khant. All Rights Reserved.
+
+            </small>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
