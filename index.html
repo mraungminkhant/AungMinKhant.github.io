@@ -1,9 +1,716 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>My Portfolio</title>
-  </head>
-  <body>
-    <h1>Hello World! Welcome to my site.</h1>
-  </body>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Aung Min Khant | Mechatronics Engineer | Automation & AI</title>
+
+  <meta name="description"
+    content="Aung Min Khant - Mechatronics Engineer specializing in Automation, Artificial Intelligence, Embedded Systems, Industrial Commissioning, Robotics, and Mechanical Design.">
+
+  <meta name="keywords"
+    content="Mechatronics Engineer, Automation Engineer, AI, Embedded Systems, Robotics, PLC, IoT, Industrial Automation">
+
+  <meta name="author" content="Aung Min Khant">
+
+
+  <!-- Open Graph for LinkedIn/Facebook sharing -->
+
+  <meta property="og:title" content="Aung Min Khant | Mechatronics Engineer">
+
+  <meta property="og:description"
+    content="Engineering portfolio showcasing automation, AI, embedded systems, robotics, and industrial projects.">
+
+  <meta property="og:type" content="website">
+
+  <meta property="og:image" content="images/profile.jpg">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- Favicon -->
+
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+  <!-- ================= NAVIGATION ================= -->
+
+  <nav>
+
+    <div class="logo">
+      AMK
+    </div>
+
+
+    <div class="menu-toggle">
+
+      <i class="fa-solid fa-bars"></i>
+
+    </div>
+
+
+    <ul>
+
+
+      <li><a href="#about">About</a></li>
+
+      <li><a href="#projects">Projects</a></li>
+
+      <li><a href="documents/AUNG MIN KHANT CV 2026.pdf">Resume</a></li>
+
+      <li><a href="#contact">Contact</a></li>
+
+    </ul>
+
+  </nav>
+
+
+  <!-- ================= HERO ================= -->
+
+  <section class="hero">
+
+    <div class="hero-left">
+
+      <p class="intro">
+        Hello, I'm
+      </p>
+
+      <h1>
+
+        Aung Min Khant
+
+      </h1>
+
+      <h2>
+
+        Mechatronics Engineer
+
+      </h2>
+
+      <p class="description">
+
+        Mechatronics Engineer specializing in Automation,
+        Artificial Intelligence, Embedded Systems,
+        Industrial Commissioning, and Mechanical Design.
+
+        I enjoy developing intelligent engineering solutions
+        that bridge hardware, software, and real-world
+        industrial applications.
+
+      </p>
+
+      <div class="buttons">
+
+        <a href="#projects" class="btn-primary">
+
+          View My Work
+
+        </a>
+
+        <a href="../documents/AUNG MIN KHANT CV 2026.pdf" class="btn-secondary" download>
+
+          Download My Resume
+
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="hero-right">
+
+      <img src="images/profile.jpg" alt="Aung Min Khant - Mechatronics Engineer" loading="lazy">
+
+    </div>
+
+  </section>
+
+  <!-- ================= HIGHLIGHTS ================= -->
+
+  <section class="highlights">
+
+    <div class="section-title">
+
+      <p>ENGINEERING HIGHLIGHTS</p>
+
+      <h2>Engineering at a Glance</h2>
+
+    </div>
+
+    <div class="highlight-grid">
+
+      <div class="highlight-card">
+
+        <h3>9+</h3>
+
+        <p>Engineering Projects</p>
+
+      </div>
+
+      <div class="highlight-card">
+
+        <h3>4</h3>
+
+        <p>Engineering Disciplines</p>
+
+      </div>
+
+      <div class="highlight-card">
+
+        <h3>20+</h3>
+
+        <p>Technologies Used</p>
+
+      </div>
+
+      <div class="highlight-card">
+
+        <h3>2</h3>
+
+        <p>Research Projects</p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ================= FEATURED PROJECTS ================= -->
+
+  <section class="projects" id="projects">
+
+    <div class="section-title">
+
+      <p>FEATURED WORK</p>
+
+      <h2>Engineering Projects</h2>
+
+      <span>
+        A collection of engineering projects spanning automation,
+        artificial intelligence, embedded systems, robotics,
+        industrial commissioning, and mechanical design.
+      </span>
+
+    </div>
+    <!-- PROJECT FILTER BUTTONS -->
+
+<div class="project-filter">
+
+    <button class="filter-btn active" data-filter="all">
+
+        All
+
+    </button>
+
+
+    <button class="filter-btn" data-filter="automation">
+
+        Automation
+
+    </button>
+
+
+    <button class="filter-btn" data-filter="ai">
+
+        AI
+
+    </button>
+
+
+    <button class="filter-btn" data-filter="embedded">
+
+        Embedded
+
+    </button>
+
+
+    <button class="filter-btn" data-filter="mechanical">
+
+        Mechanical
+
+    </button>
+
+
+    <button class="filter-btn" data-filter="energy">
+
+        Energy
+
+    </button>
+
+</div>
+
+
+    <div class="project-slider-container">
+
+
+      <button class="project-btn prev-btn">
+
+        <i class="fa-solid fa-chevron-left"></i>
+
+      </button>
+
+
+      <div class="project-grid">
+
+        <!-- Project 1 -->
+
+        <article class="project-card" data-category="automation mechanical energy">
+
+          <div class="project-image">
+
+            <img src="../images/projects/kinetic-energy-harvesting/cover.jpg"
+              alt="Advanced Kinetic Energy Harvesting System Project" loading="lazy">
+
+          </div>
+
+          <div class="project-content">
+
+            <div class="project-meta">
+
+              <span class="project-year">
+
+                2026
+
+              </span>
+
+
+              <span class="project-status">
+
+                Completed
+
+              </span>
+
+            </div>
+
+
+            <div class="tag-group">
+
+              <span>Automation</span>
+
+              <span>Mechanical</span>
+
+              <span>Energy</span>
+
+            </div>
+
+
+            <h3>
+
+              Advanced Kinetic Energy Harvesting System
+
+            </h3>
+
+            <p>
+
+              A renewable energy system that converts pedestrian
+              footsteps into usable electrical energy through a
+              rack-and-pinion mechanism with intelligent monitoring.
+
+            </p>
+
+            <a href="projects/advanced-kinetic-energy-harvesting-system.html">
+
+              View Case Study →
+
+            </a>
+
+          </div>
+
+        </article>
+
+        <!-- Project 2 -->
+
+        <article class="project-card" data-category="ai embedded lora">
+
+          <div class="project-image">
+
+            <img src="../images/AI Enhanced Indoor Localization/Unprocessed RSSI signal samples_Matlab.png"
+                            
+              loading="lazy">
+          </div>
+
+          <div class="project-content">
+
+            <div class="project-meta">
+
+    <span class="project-year">
+
+        2026
+
+    </span>
+
+
+    <span class="project-status">
+
+        Research
+
+    </span>
+
+</div>
+
+
+<div class="tag-group">
+
+    <span>AI</span>
+
+    <span>LoRa</span>
+
+    <span>Embedded</span>
+
+</div>
+
+
+<h3>
+
+    AI-Enhanced Indoor Localization
+
+</h3>
+
+            <p>
+
+              Improving indoor positioning accuracy using sensor
+              fusion, LoRa RSSI, digital compass data, and
+              AI-based path-aware localization.
+
+            </p>
+
+            <a href="projects/AI Enhanced Indoor Localization System.html">
+
+              View Case Study →
+
+            </a>
+
+          </div>
+
+        </article>
+
+        <!-- Project 3 -->
+
+        <article class="project-card" data-category="automation plc vision">
+
+          <div class="project-image">
+
+            <img src="images/projects/asrs/cover.jpg" alt="On-gantry double sided ASRS Project" loading="lazy">
+
+          </div>
+
+          <div class="project-content">
+
+            <div class="project-meta">
+
+    <span class="project-year">
+
+        2025
+
+    </span>
+
+
+    <span class="project-status">
+
+        Completed
+
+    </span>
+
+</div>
+
+
+<div class="tag-group">
+
+    <span>Automation</span>
+
+    <span>PLC</span>
+
+    <span>Machine Vision</span>
+
+</div>
+
+
+<h3>
+
+    On-Gantry Dual-Sided ASRS
+
+</h3>
+
+            <p>
+
+              Automated Storage and Retrieval System utilizing
+              PLC control, HMI, and intelligent object handling.
+
+            </p>
+
+            <a href="projects/On-Gantry Double Sided ASRS.html">
+
+              View Case Study →
+
+            </a>
+
+          </div>
+
+        </article>
+
+      </div>
+
+
+      <button class="project-btn next-btn">
+
+        <i class="fa-solid fa-chevron-right"></i>
+
+      </button>
+
+
+    </div>
+
+
+  </section>
+
+
+  <!-- ================= SKILLS ================= -->
+
+  <section class="skills" id="skills">
+
+    <div class="section-title">
+
+      <p>TECHNICAL EXPERTISE</p>
+
+      <h2>What I Work With</h2>
+
+      <span>
+        My engineering experience spans multiple disciplines, allowing me to
+        design complete systems from concept to implementation.
+      </span>
+
+    </div>
+
+    <div class="skills-grid">
+
+      <div class="skill-card">
+        <h3><i class="fa-solid fa-robot"></i>
+          Automation</h3>
+        <p>PLC, HMI, Industrial Automation, Commissioning</p>
+      </div>
+
+      <div class="skill-card">
+        <h3><i class="fa-solid fa-brain"></i>
+          Artificial Intelligence</h3>
+        <p>Machine Learning, Sensor Fusion, Indoor Localization</p>
+      </div>
+
+      <div class="skill-card">
+        <h3><i class="fa-solid fa-computer"></i>
+          Programming</h3>
+        <p>Python, MATLAB, Arduino, C/C++, Ladder Logic</p>
+      </div>
+
+      <div class="skill-card">
+        <h3><i class="fa-solid fa-microchip"></i>
+          Embedded Systems</h3>
+        <p>ESP32, LoRa, STM32, Sensors, IoT</p>
+      </div>
+
+      <div class="skill-card">
+        <h3><i class="fa-solid fa-gear"></i>
+          Mechanical Systems</h3>
+        <p>SolidWorks, AutoCAD, 3ds Max, Mechanism Design</p>
+      </div>
+
+      <div class="skill-card">
+        <h3><i class="fa-solid fa-bolt"></i>
+          Electrical Systems</h3>
+        <p>Power Systems, UPS, Electrical Commissioning</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="about" id="about">
+
+    <div class="section-title">
+
+      <p>ABOUT ME</p>
+
+      <h2>Engineering Beyond Boundaries</h2>
+
+    </div>
+
+    <div class="about-container">
+
+      <div class="about-text">
+
+        <p>
+
+          I'm <strong>Aung Min Khant</strong>, a Mechatronics Engineer
+          passionate about designing intelligent engineering solutions
+          that integrate automation, embedded systems, artificial
+          intelligence, computer vision, and mechanical design.
+
+        </p>
+
+        <p>
+
+          Throughout my academic and professional journey, I have worked
+          on projects ranging from AI-powered indoor localization and
+          automated storage systems to industrial commissioning and
+          kinetic energy harvesting. I enjoy solving practical
+          engineering problems through innovative system integration.
+
+        </p>
+
+        <a href="projects.html" class="about-button">
+
+          View All Projects →
+
+        </a>
+
+      </div>
+
+      <div class="about-card">
+
+        <div class="info">
+
+          <h3>Education</h3>
+
+          <p>Bachelor of Mechatronics Engineering</p>
+
+        </div>
+
+        <div class="info">
+
+          <h3>Location</h3>
+
+          <p>Bang Na, Bangkok, Thailand</p>
+
+        </div>
+
+        <div class="info">
+
+          <h3>Current Focus</h3>
+
+          <p>Automation • AI • Embedded Systems</p>
+
+        </div>
+
+        <div class="info">
+
+          <h3>Target Career</h3>
+
+          <p>Automation Engineer</p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+  <!-- ================= CONTACT ================= -->
+
+  <section class="contact" id="contact">
+
+    <div class="section-title">
+
+      <p>GET IN TOUCH</p>
+
+      <h2>Let's Build Something Amazing</h2>
+
+      <span>
+        Whether you're looking for an automation engineer,
+        collaborating on research,
+        or discussing engineering opportunities,
+        I'd be happy to connect.
+      </span>
+
+    </div>
+
+    <div class="contact-container">
+
+      <a href="mailto:mraungminkhant@gmail.com" class="contact-card">
+
+
+        <i class="fa-solid fa-envelope"></i>
+
+        <h3>Email</h3>
+
+        <p>mraungminkhant@gmail.com</p>
+
+
+      </a>
+
+      <a href="https://github.com/mraungminkhant" target="_blank" class="contact-card">
+
+
+        <i class="fa-brands fa-github"></i>
+
+        <h3>GitHub</h3>
+
+        <p>github.com/mraungminkhant</p>
+
+
+      </a>
+
+      <a href="https://www.linkedin.com/in/aung-min-k-444830345" target="_blank" class="contact-card">
+
+
+        <i class="fa-brands fa-linkedin"></i>
+
+        <h3>LinkedIn</h3>
+
+        <p>www.linkedin.com/in/aung-min-k-444830345</p>
+
+
+      </a>
+
+      </div>
+
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer>
+
+    <div class="footer-content">
+
+      <h2>AMK</h2>
+
+      <p>
+
+        Aung Min Khant
+
+      </p>
+
+      <p>
+
+        Mechatronics Engineer
+
+      </p>
+
+      <small>
+
+        © 2026 Aung Min Khant. All Rights Reserved.
+
+      </small>
+
+    </div>
+
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+
 </html>
