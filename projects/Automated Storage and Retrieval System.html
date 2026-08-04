@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Automated Storage and Retrieval System | Aung Min Khant</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- ================= NAVIGATION ================= -->
+
+    <nav>
+
+        <div class="logo">
+            AMK
+        </div>
+
+        <ul>
+
+            <li><a href="../index.html">Home</a></li>
+
+            <li><a href="../index.html#projects">Projects</a></li>
+
+        </ul>
+
+    </nav>
+
+
+
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <div class="hero-left">
+
+            <p class="intro">
+
+                PROJECT CASE STUDY
+
+            </p>
+
+            <h1>
+
+                Automated Storage and Retrieval System
+
+            </h1>
+
+            <h2>
+
+                Stepper Motors, 2020 Aluminum profile gantry structures, 3D printed end-effector body
+            </h2>
+
+
+
+            <p class="description">
+
+                A scaled-down Automated Shelf Storage System model designed to demonstrate the functionality and principles of a
+                real-world Automated Storage and Retrieval System (ASRS). Featuring multi-axis gantry positioning, integrated storage
+                compartments, and automated inventory tracking, this prototype serves as a functional proof-of-concept for modern
+                warehouse automation. It illustrates key mechatronic concepts, including precise motion control, sensor feedback loops,
+                and intelligent material handling workflows.
+
+            </p>
+
+    </section>
+
+
+
+
+
+    <!-- ================= INTRODUCTION ================= -->
+
+    <section class="about">
+
+        <div class="section-title">
+
+            <p>
+
+                INTRODUCTION
+
+            </p>
+
+            <h2>
+
+                Project Overview
+
+            </h2>
+
+        </div>
+
+        <div class="about-container">
+
+            <div class="about-text">
+
+                <p>
+
+                This project presents a scaled-down Automated Shelf Storage System engineered to demonstrate the core operations and
+                principles of a full-scale Automated Storage and Retrieval System (ASRS). Serving as a functional proof-of-concept for
+                modern warehouse automation, the prototype integrates multi-axis gantry positioning, integrated storage compartments,
+                and automated inventory tracking. By combining precise motion control, sensor feedback loops, and intelligent material
+                handling workflows, the system highlights key mechatronic concepts applied to streamlined logistics and automated
+                inventory management.
+
+                </p>
+
+                <div class="media-wrapper media-three-quarter">
+
+                    <figure>
+
+                        <img src="../images/Automated Storage and Retrieval System/System Architecture.jpg">
+
+                        <p class="figure-caption">
+                            System Architecture Of Automated Storage and Retrieval System.
+                        </p>
+
+                    </figure>
+
+            </div>
+
+    </section>
+
+
+
+
+
+    <!-- ================= SECTION 1 ================= -->
+
+    <section class="about">
+
+        <div class="section-title">
+
+
+            <h2>
+
+                Horizontal translation
+
+            </h2>
+
+        </div>
+
+        <div class="about-container">
+
+            <div class="about-text">
+
+                <p>
+
+                    Horizontal translation along the X-axis is executed via a timing belt conveyor mechanism driven by a NEMA 17 frame
+                    bipolar stepper motor. The conveyor drive assembly is rigidly coupled to the primary ball screw platform, enabling
+                    synchronized linear displacement across the axis. To ensure structural stability and mitigate mechanical deflection
+                    under dynamic loading conditions, the moving assembly is bilaterally constrained using a dual stainless steel linear
+                    guide rod and rail system. This configuration reduces frictional torque, minimizes axial backlash, and ensures stable,
+                    high-precision positioning during high-speed motion sequences.
+
+
+                </p>
+
+                <div class="media-wrapper media-three-quarter">
+
+                    <video controls autoplay muted loop playsinline preload="auto">
+
+                        <source src="../videos/Automated Storage and Retrieval System/Horizontal Motion.mp4" type="video/mp4">
+
+                    </video>
+
+                    <p class="figure-caption">
+                        Horizontal translation Of Automated Storage and Retrieval System.
+                    </p>
+
+                </div>
+
+    </section>
+
+
+
+
+
+    <!-- ================= SECTION 2 ================= -->
+
+    <section class="about">
+
+        <div class="section-title">
+
+
+
+            <h2>
+
+                Vertical translation
+
+            </h2>
+
+        </div>
+
+        <div class="about-container">
+
+            <div class="about-text">
+
+                <p>
+
+                    Vertical translation along the Y-axis is actuated using a ball screw coupled to a NEMA 17 stepper motor. To resolve
+                    mechanical dimensional discrepancies between the motor output shaft and the ball screw interface, a custom extension
+                    assembly was implemented. This configuration incorporates a linear extension rod and a flexible coupling mechanism,
+                    ensuring precise rotational torque transmission and structural alignment between the motor driver and the ball screw
+                    assembly.
+                </p>
+
+                <div class="media-wrapper media-three-quarter">
+
+                    <video controls autoplay muted loop playsinline preload="auto">
+
+                        <source src="../videos/Automated Storage and Retrieval System/Vertical Motion.mp4" type="video/mp4">
+
+                    </video>
+
+                    <p class="figure-caption">
+                        Vertical translation Of Automated Storage and Retrieval System.
+                    </p>
+
+                </div>
+
+    </section>
+
+
+    <!-- ================= SECTION 3 ================= -->
+
+    <section class="about">
+
+        <div class="section-title">
+
+
+
+            <h2>
+
+                Operational Workflow for ASRS
+
+            </h2>
+
+        </div>
+
+        <div class="about-container">
+
+            <div class="about-text">
+
+                <p>
+
+                    To execute automated material handling across a 3x3 storage array, the gantry positioning mechanism coordinates
+                    multi-axis motion to align the end-effector with the target shelf coordinates(X,Y). Once planar alignment is
+                    achieved at the designated cell, the integrated forklift subsystem executes a controlled Z-axis prismatic translation
+                    sequence to perform cargo storage or retrieval. The storage cycle initiates as the forklift extends beneath the
+                    payload, elevates vertically to clear the shelf support, and retracts back into the main carriage; conversely, the
+                    retrieval cycle reverses this kinematic sequence to deposit cargo onto the material handling framework with high spatial
+                    repeatability.
+                </p>
+
+                <div class="media-wrapper media-three-quarter">
+
+                    <video controls autoplay muted loop playsinline preload="auto">
+
+                        <source src="../videos/Automated Storage and Retrieval System/Forklift Retrieval Mechanism.mp4" type="video/mp4">
+
+                    </video>
+
+                    <p class="figure-caption">
+                        Operational Workflow Of Automated Storage and Retrieval System.
+                    </p>
+
+                </div>
+
+    </section>
+
+
+    <!-- ================= SECTION 5 ================= -->
+
+    <section class="about">
+
+        <div class="section-title">
+
+
+
+            <h2>
+
+                End-effector Mechanism
+
+            </h2>
+
+        </div>
+
+        <div class="about-container">
+
+            <div class="about-text">
+
+                <p>
+
+                    To facilitate precise motion along the Z-axis, a custom additive-manufactured end-effector housing was designed to
+                    secure the actuator and couple the linear guide to the cargo handling framework. Actuation is provided by a 12 VDC
+                    unipolar stepper motor operating in conjunction with a linear guide mechanism to deliver controlled prismatic motion.
+                    This prismatic joint drives an acrylic platform along the vertical axis, enabling accurate
+                    spatial positioning of the end-effector during storage and retrieval sequences.
+                    </p>
+
+                <div class="media-wrapper media-three-quarter">
+
+                    <video controls autoplay muted loop playsinline preload="auto">
+
+                        <source src="../videos/Automated Storage and Retrieval System/Z operation.mp4" type="video/mp4">
+
+                    </video>
+
+                    <p class="figure-caption">
+                        End-effector Mechanism Of Automated Storage and Retrieval System.
+                    </p>
+
+                </div>
+
+    </section>
+
+    <!-- ================= TECHNOLOGIES ================= -->
+
+    <section class="projects">
+
+        <div class="section-title">
+
+            <p>
+
+                ENGINEERING DETAILS
+
+            </p>
+
+            <h2>
+
+                Technologies Used
+
+            </h2>
+
+        </div>
+
+        <div class="skills-grid">
+
+            <div class="skill-card">
+
+                <h3>
+
+                    Mechanical components
+
+                </h3>
+
+                <p>
+
+                    M1 Rack and Pinion Gear<br>
+
+                    Nema17, Unipolar stepper motor<br>
+
+                    Linear Guide <br>
+
+                    3D Printed Body Attachments & Acrylic Plate<br>
+
+                    2020 Aluminum Profiles<br>
+
+                    GT2 Timing Pulley Gear<br>
+
+                </p>
+
+            </div>
+
+
+
+
+
+            <div class="skill-card">
+
+                <h3>
+
+                    Electrical & Software
+
+                </h3>
+
+                <p>
+
+                    Arduino Uno<br>
+
+                    Electrical Power Supply<br>
+
+                    Arduino IDE<br>
+
+                </p>
+
+            </div>
+
+            <div class="skill-card">
+
+                <h3>
+                    Members
+                </h3>
+
+                <p>
+
+                    <i class="fa-brands fa-linkedin"></i>
+                    <a href="https://www.linkedin.com/in/aung-min-k-444830345" target="_blank" class="member-link">
+                        Aung Min Khant
+                    </a>
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+
+    </section>
+
+
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <h2>
+
+                AMK
+
+            </h2>
+
+            <p>
+
+                Aung Min Khant
+
+            </p>
+
+            <small>
+
+                © 2026 Aung Min Khant. All Rights Reserved.
+
+            </small>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
