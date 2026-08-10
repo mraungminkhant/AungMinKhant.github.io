@@ -1,21 +1,43 @@
+:root{
+  --bg:#ffffff;
+  --text:#1d1d1f;
+  --card:#ffffff;
+  --surface:#f7f8fa;
+  --muted:#555;
+  --border:#ececec;
+}
+
+body.dark{
+  --bg:#0f1115;
+  --text:#f5f7fa;
+  --card:#171a21;
+  --surface:#12151c;
+  --muted:#b8c0cc;
+  --border:#2a2f3a;
+}
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
-html{
-    scroll-behavior:smooth;
+html{ 
+    scroll-behavior:smooth; 
+    scroll-padding-top:100px; 
 }
 
+section{ 
+    scroll-margin-top:100px; 
+}
+
+
 body{
+    background:var(--bg);
+    color:var(--text);
 
+    /* Restore the original Inter font */
     font-family:'Inter',sans-serif;
-
-    background:#ffffff;
-
-    color:#1d1d1f;
-
 }
 
 /* NAVIGATION */
@@ -380,6 +402,7 @@ transform:translateY(0);
     font-weight:800;
 
 }
+
 
 .about-container{
 
@@ -1744,3 +1767,244 @@ a:focus-visible{
     display:block;
 
 }
+
+/* =====================================================
+   DARK MODE
+   Replace your old dark-mode section with this exact code
+===================================================== */
+
+/* Theme toggle button */
+.theme-toggle{
+    border:none;
+    background:#f1f5fa;
+    color:#1d1d1f;
+    width:44px;
+    height:44px;
+    border-radius:50%;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:.3s;
+    margin-left:16px;
+}
+
+.theme-toggle:hover{
+    transform:scale(1.08);
+    background:#0071E3;
+    color:#fff;
+}
+
+/* Smooth transitions */
+body,
+nav,
+.hero,
+.about,
+.projects,
+.skills,
+.highlights,
+.contact,
+footer,
+.project-card,
+.skill-card,
+.highlight-card,
+.about-card,
+.contact-card{
+    transition:
+        background-color .35s ease,
+        color .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease;
+}
+
+/* ================= DARK MODE BASE ================= */
+
+body.dark{
+    background:#0f1115;
+    color:#f5f7fa;
+}
+
+/* Navigation */
+body.dark nav{
+    background:rgba(15,17,21,0.82);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+body.dark .nav-scrolled{
+    background:#151922;
+    box-shadow:0 10px 30px rgba(0,0,0,.45);
+}
+
+body.dark nav a{
+    color:#f5f7fa;
+}
+
+body.dark nav a:hover,
+body.dark nav a.active{
+    color:#4da3ff;
+}
+
+/* Hero */
+body.dark .hero{
+    background:
+        radial-gradient(circle at top left,#122235,transparent 35%),
+        radial-gradient(circle at bottom right,#151922,transparent 45%);
+}
+
+body.dark .hero h2{
+    color:#aab3c5;
+}
+
+body.dark .description{
+    color:#c5ccd8;
+}
+
+/* Section backgrounds */
+body.dark .about,
+body.dark .contact{
+    background:#151922;
+}
+
+body.dark .projects,
+body.dark .highlights{
+    background:#10141b;
+}
+
+body.dark .skills{
+    background:#0f1115;
+}
+
+/* Cards */
+body.dark .project-card,
+body.dark .skill-card,
+body.dark .highlight-card,
+body.dark .about-card,
+body.dark .contact-card{
+    background:#1a1f29;
+    border:1px solid rgba(255,255,255,0.08);
+    box-shadow:0 18px 45px rgba(0,0,0,.35);
+    color:#f5f7fa;
+}
+
+body.dark .project-card:hover,
+body.dark .skill-card:hover,
+body.dark .highlight-card:hover,
+body.dark .contact-card:hover{
+    box-shadow:0 25px 55px rgba(0,0,0,.45);
+}
+
+/* Text inside cards */
+body.dark .project-content p,
+body.dark .skill-card p,
+body.dark .highlight-card p,
+body.dark .about-text p,
+body.dark .info p,
+body.dark .contact-card p{
+    color:#c5ccd8;
+}
+
+/* Section titles */
+body.dark .section-title h2{
+    color:#ffffff;
+}
+
+body.dark .section-title span{
+    color:#b7c0d1;
+}
+
+/* Tags */
+body.dark .tag-group span{
+    background:#122235;
+    color:#4da3ff;
+}
+
+/* Filter buttons */
+body.dark .filter-btn{
+    background:#1d2430;
+    color:#d7deea;
+}
+
+body.dark .filter-btn:hover{
+    color:#4da3ff;
+}
+
+body.dark .filter-btn.active{
+    background:#0071E3;
+    color:#fff;
+}
+
+/* Project arrows */
+body.dark .project-btn{
+    background:#1a1f29;
+    color:#4da3ff;
+    box-shadow:0 10px 25px rgba(0,0,0,.4);
+}
+
+body.dark .project-btn:hover{
+    background:#0071E3;
+    color:#fff;
+}
+
+/* Buttons */
+body.dark .btn-secondary{
+    border-color:#4da3ff;
+    color:#4da3ff;
+}
+
+body.dark .btn-secondary:hover{
+    background:#4da3ff;
+    color:#fff;
+}
+
+/* Footer */
+body.dark footer{
+    background:#0a0d12;
+}
+
+body.dark .footer-content p{
+    color:#9aa4b6;
+}
+
+body.dark .footer-content small{
+    color:#6f7b8f;
+}
+
+/* Theme button in dark mode */
+body.dark .theme-toggle{
+    background:#1d2430;
+    color:#f5f7fa;
+}
+
+body.dark .theme-toggle:hover{
+    background:#0071E3;
+    color:#fff;
+}
+/* ================= THEME TOGGLE BUTTON ================= */
+
+.theme-toggle{
+    width:44px;
+    height:44px;
+    border:none;
+    border-radius:50%;
+    background:rgba(255,255,255,.9);
+    color:#1d1d1f;
+    font-size:18px;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:.3s;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.theme-toggle:hover{
+    transform:translateY(-2px);
+    background:#0071E3;
+    color:white;
+}
+
+body.dark .theme-toggle{
+    background:#1f2937;
+    color:#f9fafb;
+}
+
